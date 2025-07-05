@@ -92,16 +92,14 @@ function MainPage() {
     }, 500);
   };
 
-  // 「実行」ボタン => 4秒ロード => Reflexアプリケーションのマップ機能
+  // 「実行」ボタン => 4秒ロード => 観光地選択画面に遷移
   const handleExecute = () => {
     setShowModal(false);
     setIsLoading(true);
 
     setTimeout(() => {
-      // Reflexアプリケーションのマップ機能に遷移
-      const isProduction = process.env.NODE_ENV === 'production';
-      const mapUrl = isProduction ? '/api' : 'http://localhost:3001';
-      window.open(mapUrl, '_blank');
+      // 観光地選択画面に遷移
+      window.location.href = '/select';
       setIsLoading(false);
     }, 4000);
   };

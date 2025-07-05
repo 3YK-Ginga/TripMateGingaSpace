@@ -114,14 +114,17 @@ const Select: React.FC = () => {
     setLastSort('time');
   };
 
-  // しおり作成 (4秒 -> 1秒後に移動)
+  // しおり作成 (4秒 -> 1秒後にマップ画面に移動)
   const handleCreateShiori = () => {
     setIsCreating(true);
     setTimeout(() => {
       setIsCreating(false);
       setShowRedirectMsg(true);
       setTimeout(() => {
-        window.location.href = 'http://localhost:3000';
+        // 本番環境では /api、開発環境では localhost:3001 に遷移
+        const isProduction = process.env.NODE_ENV === 'production';
+        const mapUrl = isProduction ? '/api' : 'http://localhost:3001';
+        window.open(mapUrl, '_blank');
       }, 1000);
     }, 4000);
   };
