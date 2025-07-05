@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_cdcbd17a304cd51ff1ae479b2370a473 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_cdcbd17a304cd51ff1ae479b2370a473" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_cdcbd17a304cd51ff1ae479b2370a473 = L.map(
+                "map_cdcbd17a304cd51ff1ae479b2370a473",
+                {
+                    center: [0.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 1,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_15bbdd71094508c4aa86f60d4332ecfd = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_15bbdd71094508c4aa86f60d4332ecfd.addTo(map_cdcbd17a304cd51ff1ae479b2370a473);
+        
+    
+        function geo_json_09c0cb8ed0649d1e15723e63e917174f_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 1.0, "weight": 10};
+            }
+        }
+
+        function geo_json_09c0cb8ed0649d1e15723e63e917174f_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_09c0cb8ed0649d1e15723e63e917174f = L.geoJson(null, {
+                onEachFeature: geo_json_09c0cb8ed0649d1e15723e63e917174f_onEachFeature,
+            
+                style: geo_json_09c0cb8ed0649d1e15723e63e917174f_styler,
+            ...{
+}
+        });
+
+        function geo_json_09c0cb8ed0649d1e15723e63e917174f_add (data) {
+            geo_json_09c0cb8ed0649d1e15723e63e917174f
+                .addData(data);
+        }
+            geo_json_09c0cb8ed0649d1e15723e63e917174f_add({"bbox": [139.930898, 37.504139, 140.460933, 37.755228], "features": [{"bbox": [139.953784, 37.504163, 139.953965, 37.504534], "geometry": {"coordinates": [[139.953965, 37.504534], [139.953784, 37.504163]], "type": "LineString"}, "id": "0", "properties": {"inline": {"color": "#BFBFBF", "line_style": "auxiliary", "opacity": 0.76, "width": 7}, "outline": {"color": "#0A6400", "line_style": "dashed", "opacity": 0.5, "width": 10}, "route_no": "1", "section": "0001,0002,0003,0004,0005,0006,0007", "ways": "walk"}, "type": "Feature"}, {"bbox": [139.953092, 37.504163, 139.953784, 37.504351], "geometry": {"coordinates": [[139.953784, 37.504163], [139.953456, 37.50427], [139.953126, 37.504344], [139.953092, 37.504351]], "type": "LineString"}, "id": "1", "properties": {"indoor": false, "inline": {"color": "#00FA46", "line_style": "solid", "opacity": 0.76, "width": 7}, "outline": {"color": "#0A6400", "line_style": "solid", "opacity": 0.5, "width": 10}, "restriction": false, "route_no": "1", "section": "0001,0002,0003,0004,0005,0006,0007", "ways": "walk"}, "type": "Feature"}, {"bbox": [139.952228, 37.504351, 139.953092, 37.504517], "geometry": {"coordinates": [[139.953092, 37.504351], [139.953052, 37.504359], [139.953029, 37.504363], [139.952649, 37.504443], [139.952501, 37.50447], [139.952365, 37.504494], [139.952228, 37.504517]], "type": "LineString"}, "id": "2", "properties": {"indoor": false, "inline": {"color": "#00FA46", "line_style": "solid", "opacity": 0.76, "width": 7}, "outline": {"color": "#0A6400", "line_style": "solid", "opacity": 0.5, "width": 10}, "restriction": false, "route_no": "1", "section": "0001,0002,0003,0004,0005,0006,0007", "ways": "walk"}, "type": "Feature"}, {"bbox": [139.951732, 37.504199, 139.952308, 37.504517], "geometry": {"coordinates": [[139.952228, 37.504517], [139.952308, 37.504221], [139.951732, 37.504199]], "type": "LineString"}, "id": "3", "properties": {"indoor": false, "inline": {"color": "#00FA46", "line_style": "solid", "opacity": 0.76, "width": 7}, "outline": {"color": "#0A6400", "line_style": "solid", "opacity": 0.5, "width": 10}, "restriction": false, "route_no": "1", "section": "0001,0002,0003,0004,0005,0006,0007", "ways": "walk"}, "type": "Feature"}, {"bbox": [139.930898, 37.504139, 139.951738, 37.507566], "geometry": {"coordinates": [[139.951738, 37.504139], [139.930898, 37.507566]], "type": "LineString"}, "id": "4", "properties": {"inline": {"color": "#E150FF", "line_style": "solid", "opacity": 0.76, "width": 7}, "outline": {"color": "#631773", "line_style": "solid", "opacity": 0.5, "width": 10}, "route_no": "1", "section": "0001,0002,0003,0004,0005,0006,0007", "transport_type": "bus", "ways": "transport"}, "type": "Feature"}, {"bbox": [139.930925, 37.507595, 139.931637, 37.507759], "geometry": {"coordinates": [[139.930925, 37.507705], [139.93127, 37.507657], [139.931438, 37.507637], [139.931582, 37.507595], [139.931604, 37.507682], [139.931637, 37.507759]], "type": "LineString"}, "id": "5", "properties": {"indoor": false, "inline": {"color": "#00FA46", "line_style": "solid", "opacity": 0.76, "width": 7}, "outline": {"color": "#0A6400", "line_style": "solid", "opacity": 0.5, "width": 10}, "restriction": false, "route_no": "1", "section": "0001,0002,0003,0004,0005,0006,0007", "ways": "walk"}, "type": "Feature"}, {"bbox": [139.931664, 37.507753, 140.46091, 37.75497], "geometry": {"coordinates": [[139.931664, 37.507753], [140.46091, 37.75497]], "type": "LineString"}, "id": "6", "properties": {"inline": {"color": "#E150FF", "line_style": "solid", "opacity": 0.76, "width": 7}, "outline": {"color": "#631773", "line_style": "solid", "opacity": 0.5, "width": 10}, "route_no": "1", "section": "0001,0002,0003,0004,0005,0006,0007", "transport_type": "bus", "ways": "transport"}, "type": "Feature"}, {"bbox": [140.460827, 37.754973, 140.460933, 37.755207], "geometry": {"coordinates": [[140.460933, 37.754973], [140.460909, 37.755092], [140.460912, 37.755205], [140.460827, 37.755207]], "type": "LineString"}, "id": "7", "properties": {"indoor": false, "inline": {"color": "#00FA46", "line_style": "solid", "opacity": 0.76, "width": 7}, "outline": {"color": "#0A6400", "line_style": "solid", "opacity": 0.5, "width": 10}, "restriction": false, "route_no": "1", "section": "0001,0002,0003,0004,0005,0006,0007", "ways": "walk"}, "type": "Feature"}, {"bbox": [140.460602, 37.755094, 140.460827, 37.755207], "geometry": {"coordinates": [[140.460827, 37.755207], [140.460681, 37.755207], [140.460602, 37.755207], [140.460602, 37.755094]], "type": "LineString"}, "id": "8", "properties": {"indoor": false, "inline": {"color": "#00FA46", "line_style": "solid", "opacity": 0.76, "width": 7}, "outline": {"color": "#0A6400", "line_style": "solid", "opacity": 0.5, "width": 10}, "restriction": false, "route_no": "1", "section": "0001,0002,0003,0004,0005,0006,0007", "ways": "walk"}, "type": "Feature"}, {"bbox": [140.460568, 37.754573, 140.460602, 37.755094], "geometry": {"coordinates": [[140.460602, 37.755094], [140.460602, 37.755082], [140.460568, 37.755082], [140.460574, 37.754573]], "type": "LineString"}, "id": "9", "properties": {"indoor": false, "inline": {"color": "#00FA46", "line_style": "solid", "opacity": 0.76, "width": 7}, "outline": {"color": "#0A6400", "line_style": "solid", "opacity": 0.5, "width": 10}, "restriction": false, "route_no": "1", "section": "0001,0002,0003,0004,0005,0006,0007", "ways": "walk"}, "type": "Feature"}, {"bbox": [140.460526, 37.754573, 140.460574, 37.754573], "geometry": {"coordinates": [[140.460574, 37.754573], [140.46056, 37.754573], [140.460526, 37.754573]], "type": "LineString"}, "id": "10", "properties": {"indoor": false, "inline": {"color": "#00FA46", "line_style": "solid", "opacity": 0.76, "width": 7}, "outline": {"color": "#0A6400", "line_style": "solid", "opacity": 0.5, "width": 10}, "restriction": false, "route_no": "1", "section": "0001,0002,0003,0004,0005,0006,0007", "ways": "walk"}, "type": "Feature"}, {"bbox": [140.458381, 37.754537, 140.460526, 37.75467], "geometry": {"coordinates": [[140.460526, 37.754573], [140.460494, 37.754572], [140.459551, 37.754537], [140.459176, 37.754537], [140.459125, 37.754537], [140.458381, 37.754537], [140.458381, 37.75467]], "type": "LineString"}, "id": "11", "properties": {"indoor": false, "inline": {"color": "#00FA46", "line_style": "solid", "opacity": 0.76, "width": 7}, "outline": {"color": "#0A6400", "line_style": "solid", "opacity": 0.5, "width": 10}, "restriction": false, "route_no": "1", "section": "0001,0002,0003,0004,0005,0006,0007", "ways": "walk"}, "type": "Feature"}, {"bbox": [140.458381, 37.75467, 140.458409, 37.755228], "geometry": {"coordinates": [[140.458381, 37.75467], [140.458409, 37.75467], [140.458409, 37.754802], [140.458409, 37.755228]], "type": "LineString"}, "id": "12", "properties": {"indoor": false, "inline": {"color": "#00FA46", "line_style": "solid", "opacity": 0.76, "width": 7}, "outline": {"color": "#0A6400", "line_style": "solid", "opacity": 0.5, "width": 10}, "restriction": false, "route_no": "1", "section": "0001,0002,0003,0004,0005,0006,0007", "ways": "walk"}, "type": "Feature"}, {"bbox": [140.304618, 37.752362, 140.458366, 37.755228], "geometry": {"coordinates": [[140.458366, 37.755228], [140.304618, 37.752362]], "type": "LineString"}, "id": "13", "properties": {"inline": {"color": "#E150FF", "line_style": "solid", "opacity": 0.76, "width": 7}, "outline": {"color": "#631773", "line_style": "solid", "opacity": 0.5, "width": 10}, "route_no": "1", "section": "0001,0002,0003,0004,0005,0006,0007", "transport_type": "bus", "ways": "transport"}, "type": "Feature"}, {"bbox": [140.304377, 37.751996, 140.304569, 37.752372], "geometry": {"coordinates": [[140.304569, 37.752372], [140.304561, 37.752352], [140.304493, 37.752166], [140.304425, 37.752055], [140.304377, 37.751996]], "type": "LineString"}, "id": "14", "properties": {"indoor": false, "inline": {"color": "#00FA46", "line_style": "solid", "opacity": 0.76, "width": 7}, "outline": {"color": "#0A6400", "line_style": "solid", "opacity": 0.5, "width": 10}, "restriction": false, "route_no": "1", "section": "0001,0002,0003,0004,0005,0006,0007", "ways": "walk"}, "type": "Feature"}, {"bbox": [140.304012, 37.751996, 140.304377, 37.752195], "geometry": {"coordinates": [[140.304377, 37.751996], [140.304012, 37.752195]], "type": "LineString"}, "id": "15", "properties": {"inline": {"color": "#BFBFBF", "line_style": "auxiliary", "opacity": 0.76, "width": 7}, "outline": {"color": "#0A6400", "line_style": "dashed", "opacity": 0.5, "width": 10}, "route_no": "1", "section": "0001,0002,0003,0004,0005,0006,0007", "ways": "walk"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_09c0cb8ed0649d1e15723e63e917174f.addTo(map_cdcbd17a304cd51ff1ae479b2370a473);
+        
+    
+            var marker_5cd08f227d41f623acad38e654304c55 = L.marker(
+                [37.7521955, 140.3040121],
+                {
+}
+            ).addTo(map_cdcbd17a304cd51ff1ae479b2370a473);
+        
+    
+            var div_icon_e00c95998b210769846b57bd2236aa61 = L.divIcon({
+  "html": "\u003cdiv\u003e\n        \u003cdiv style=\"display: flex; flex-direction: column; align-items: center; width: 75px; text-align: center;\"\u003e\n            \u003cdiv style=\"border: 2px solid black; border-radius: 50%; overflow: hidden; width: 75px; height: 75px;\"\u003e\n                \u003cimg src=\"https://cdn.jalan.jp/jalan/img/4/kuchikomi/2884/KL/46be5_0002884673_14.jpg\" style=\"width: 100%; height: 100%; border-radius: 50%;\"\u003e\n            \u003c/div\u003e\n            \u003cdiv style=\"background: rgba(255, 255, 255, 0.7); border-radius: 5px; padding: 2px; margin-top: 5px;\"\u003e\n                \u9ad8\u6e6f\u6e29\u6cc9\n            \u003c/div\u003e\n        \u003c/div\u003e\n    \u003c/div\u003e",
+  "iconAnchor": [37, 37],
+  "className": "empty",
+});
+            marker_5cd08f227d41f623acad38e654304c55.setIcon(div_icon_e00c95998b210769846b57bd2236aa61);
+        
+    
+                marker_5cd08f227d41f623acad38e654304c55.setIcon(div_icon_e00c95998b210769846b57bd2236aa61);
+            
+    
+            map_cdcbd17a304cd51ff1ae479b2370a473.fitBounds(
+                [[36.932236, 139.920861], [37.823412, 140.913998]],
+                {}
+            );
+        
+</script>
+</html>

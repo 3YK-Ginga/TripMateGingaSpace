@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "main/tripmate/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    },
+    {
+      "src": "ginmate/app.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "ginmate/app.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "main/tripmate/$1"
+    }
+  ],
+  "env": {
+    "ENV": "prod",
+    "FRONTEND_PORT": "3000",
+    "BACKEND_PORT": "8000"
+  }
+} 
