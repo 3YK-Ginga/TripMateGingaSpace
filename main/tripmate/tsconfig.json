@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    // 例: "react" や "react-jsx" を指定 (CRA5 以降は "react-jsx" が推奨)
+    "jsx": "react",
+
+    // 他にも必要に応じて設定
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    // ...
+  },
+  "include": ["src"]
+}

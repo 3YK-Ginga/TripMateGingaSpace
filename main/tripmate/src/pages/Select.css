@@ -1,0 +1,208 @@
+.select-container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ソートボタン */
+.sort-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sort-buttons button {
+  background-color: #fff; /* 白 */
+  color: #333;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.sort-buttons button:hover {
+  border-color: #aaa;
+  background-color: #f0f0f0;
+}
+
+/* 最後に押したボタンを水色に */
+.sort-buttons .active-sort {
+  background-color: #ccf5ff;
+  border-color: #66e0ff;
+}
+
+/* 2段×3列 (レスポンシブ対応) */
+.attraction-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 800px) {
+  .attraction-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .attraction-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.attraction-card {
+  background-color: #f9f9f9;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.attraction-card.selected {
+  border-color: #00aaee;
+  background-color: #e6f9ff;
+}
+
+.attraction-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.attraction-info {
+  margin: 0.5rem 0;
+}
+
+.attraction-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* 提案先ボタン */
+.proposal-button-container {
+  margin-top: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.proposal-button-container button {
+  background-color: #b8e986;
+  color: #333;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+.proposal-button-container button:hover {
+  background-color: #a5de73;
+}
+
+.page-number {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* 選択済み一覧 */
+.selection-list {
+  margin-top: 1rem;
+  background-color: #f1f1f1;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.selection-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.selection-list li {
+  margin: 0.5rem 0;
+}
+
+/* 選択個数 & 合計費用 */
+.selected-summary {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* しおり作成ボタン */
+.bookmark-button-container {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.bookmark-button {
+  background-color: #ffbb66;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  border: none;
+}
+
+.bookmark-button:hover {
+  opacity: 0.8;
+}
+
+/* しおり作成中のオーバーレイ */
+.creating-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.creating-message {
+  text-align: center;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.creating-message .spinner {
+  margin: 0 auto 1rem;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 遷移メッセージ (中央 & 大きく) */
+.redirect-msg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255,255,255,0.95);
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 2rem 3rem;
+  z-index: 3000;
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+}

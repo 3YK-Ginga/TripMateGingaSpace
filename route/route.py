@@ -4,7 +4,7 @@ import json, sys, re, os
 import requests
 import glob
 from urllib.parse import quote
-from min.guide import createGuidebookRoute
+from route.guide import createGuidebookRoute
 from bs4 import BeautifulSoup
 from typing import TypedDict, List, Dict
 
@@ -18,35 +18,111 @@ class State(rx.State):
         self.count -= 1
 
 
-def navbar(bar_color="black"):
+def navbar():
     return rx.hstack(
+        # TripMate タイトルリンク
         rx.link(
-            rx.box(rx.text("Trip Mate", color="white", font_weight="bold", font_size="2em"), align="center"),
+            rx.text(
+                "TripMate", 
+                color="white", 
+                font_weight="bold", 
+                font_size="1.5rem",
+                cursor="pointer",
+                _hover={"opacity": "0.8"}
+            ),
             href="/",
+            text_decoration="none",
+            padding_left="1rem"
         ),
+        # ナビゲーションリンク
         rx.hstack(
-            rx.link(rx.text("新規登録", color="white"), href="/register"),
-            rx.link(rx.text("ログイン", color="white"), href="/login"),
-            rx.link(rx.text("お問い合わせ", color="white"), href="/contact"),
-            rx.link(rx.text("DB", color="white"), href="/db"),
-            spacing="5",
+            rx.link(
+                "ログイン",
+                href="/login",
+                font_size="0.9rem",
+                color="white",
+                background_color="#0066cc",
+                padding="0.5rem 1rem",
+                border_radius="25px",
+                text_decoration="none",
+                _hover={"background_color": "#005bb5"},
+            ),
+            rx.link(
+                "新規登録",
+                href="/register",
+                font_size="0.9rem",
+                color="white",
+                background_color="#0066cc",
+                padding="0.5rem 1rem",
+                border_radius="25px",
+                text_decoration="none",
+                _hover={"background_color": "#005bb5"},
+            ),
+            rx.link(
+                "お問い合わせ",
+                href="/contact",
+                font_size="0.9rem",
+                color="white",
+                background_color="#0066cc",
+                padding="0.5rem 1rem",
+                border_radius="25px",
+                text_decoration="none",
+                _hover={"background_color": "#005bb5"},
+            ),
+            rx.link(
+                "DB",
+                href="/db",
+                font_size="0.9rem",
+                color="white",
+                background_color="#0066cc",
+                padding="0.5rem 1rem",
+                border_radius="25px",
+                text_decoration="none",
+                _hover={"background_color": "#005bb5"},
+            ),
+            spacing="1",  # '1rem' から '1' に変更
             align="center",
         ),
+        justify="between",  # 'space-between' から 'between' に変更
+        align="center",
+        background_color="#002f57",
+        color="white",
+        padding="1rem",
+        box_shadow="0 2px 5px rgba(0, 0, 0, 0.2)",
         position="fixed",
         top="0",
-        bg=bar_color,
-        align="center",
-        justify="between",
-        height="10vh",
         width="100%",
-        padding="0 2em",
+        height="10vh",
         z_index="1000",
     )
 
-def register(): return rx.box(navbar("gray"), rx.text("ユーザー登録ページ", font_size="2em", font_weight="bold"),)
-def login(): return rx.box(navbar("gray"), rx.text("ログインページ", font_size="2em", font_weight="bold"),)
-def contact(): return rx.box(navbar("gray"), rx.text("お問い合わせページ", font_size="2em", font_weight="bold"),)
-def db(): return rx.box(navbar("gray"), rx.text("DBページ", font_size="2em", font_weight="bold"),)
+def register(): 
+    return rx.box(
+        navbar(),
+        rx.box(height="10vh"),  # ナビゲーションバーのスペース
+        rx.text("ユーザー登録ページ", font_size="2em", font_weight="bold"),
+    )
+
+def login(): 
+    return rx.box(
+        navbar(),
+        rx.box(height="10vh"),
+        rx.text("ログインページ", font_size="2em", font_weight="bold"),
+    )
+
+def contact(): 
+    return rx.box(
+        navbar(),
+        rx.box(height="10vh"),
+        rx.text("お問い合わせページ", font_size="2em", font_weight="bold"),
+    )
+
+def db(): 
+    return rx.box(
+        navbar(),
+        rx.box(height="10vh"),
+        rx.text("DBページ", font_size="2em", font_weight="bold"),
+    )
 
 def time_component(status, time):    
     bg_color = "aqua"
@@ -56,9 +132,9 @@ def time_component(status, time):
         bg_color = "lightyellow"
     return rx.card(
         rx.flex(
-            rx.text(status, font_weight="bold", bg=bg_color),
+            rx.text(status, font_weight="bold", bg=bg_color, padding="0.5rem", border_radius="0.5rem"),
             rx.text(time),
-            justify="between",
+            justify="between",  # 'space-between' から 'between' に変更
             align="center",
             height="100%",
         ),
@@ -70,7 +146,8 @@ def time_component(status, time):
 
 def place_component(place):
     return rx.card(
-        rx.text(place,
+        rx.text(
+            place,
             align="center",
             height="100%",
             font_weight="bold",
@@ -88,7 +165,8 @@ def place_component(place):
 def traffic_component(traffic):
     return rx.card(
         rx.flex(
-            rx.text(traffic,
+            rx.text(
+                traffic,
                 font_weight="bold",
                 font_size="1.5em",
                 overflow="hidden",
@@ -235,7 +313,8 @@ def root_guide(transports_list):
         relay = i > 0
         if i+1 < len(transports_list):
             next_departure_time = transports_list[i+1]["departure_time"]['time']
-        else: next_departure_time = ""
+        else: 
+            next_departure_time = ""
         components.append(rooting(transports_list[i], next_departure_time, relay))
     return rx.box(*components)
 
@@ -331,7 +410,7 @@ def guidebook(displayLists):
         height="calc(100vh - 10vh)",
         spacing="0",
     )    
-    
+
 
 def index():
     start_place = {

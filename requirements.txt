@@ -1,4 +1,2 @@
-reflex
-folium
-requests
-jsonlines
+
+reflex==0.7.8

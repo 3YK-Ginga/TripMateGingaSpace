@@ -1,0 +1,26 @@
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #002f57;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-top: 2px solid #0066cc;
+}
+
+.footer-updated {
+  font-size: 0.9rem;
+}
+
+.footer-support {
+  background-color: #0066cc;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-support:hover {
+  background-color: #005bb5;
+}
